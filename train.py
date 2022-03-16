@@ -5,6 +5,7 @@ from backbone.model_resnet import ResNet_50
 # from tensorboardX import SummaryWriter
 # import wandb
 # from tqdm import tqdm
+import time
 import os
 from glob import glob
 
@@ -26,5 +27,7 @@ if __name__ == '__main__':
 
     BACKBONE = nn.DataParallel(BACKBONE, device_ids = GPU_ID)
     BACKBONE = BACKBONE.to(DEVICE)
-        
-    torch.save(BACKBONE.module.state_dict(), os.path.join(MODEL_ROOT, "Backbone_checkpoint.pth"))
+    
+    for i in range(1000):
+        torch.save(BACKBONE.module.state_dict(), os.path.join(MODEL_ROOT, "Backbone_checkpoint.pth"))
+        time.sleep(100)
