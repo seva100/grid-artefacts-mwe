@@ -1,0 +1,10 @@
+*.pyc
+*.log
+*__pycache__*
+*wandb*
+*.png
+*.jpg
+*.npy
+*ipynb_checkpoints*
+data
+scripts/
